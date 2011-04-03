@@ -1,6 +1,6 @@
 /* pikuShell                         #
 #     by mcb3k                       # 
-#         v0.4     34.2.2k11         #
+#         v0.4     4.2.2k11          #
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 //has an issue with some commands being jumbled with the previous command.
