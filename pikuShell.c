@@ -1,7 +1,7 @@
-/* pikuShell                         #
-#     by mcb3k                       # 
-#         v0.4     4.2.2k11          #
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* pikuShell                               #
+#     by mcb3k with help from boysetsfrog  # 
+#         v0.4     4.3.2k11                #
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 //has an issue with some commands being jumbled with the previous command.
 
