@@ -1,9 +1,9 @@
 /* pikuShell                         #
 #     by mcb3k                       # 
-#         v0.3     34.2.2k11         #
+#         v0.4     34.2.2k11         #
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-//has an issue with commands over 8 chars
+//has an issue with some commands being jumbled with the previous command.
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -25,7 +25,7 @@ int main()
 	{
 		printf("?> "); //display the prompt.
 
-		fgets(cmdString, sizeof(cmdString)-1, stdin); //get the input from the user
+		fgets(cmdString, MAX_LEN-1, stdin); //get the input from the user
 		
 	       if (cmdString[0]=='e' && cmdString[1]=='x') // if cmdString is exit, then quit.
 		{
@@ -53,8 +53,8 @@ int main()
 		int i = 0;
 		while ( command != NULL)
 		  {
-		    parameters[i] = malloc(sizeof(cmdString));
-		    strncpy(parameters[i], command, sizeof(command));
+		    parameters[i] = malloc(strlen(cmdString));
+		    strncpy(parameters[i], command, strlen(command));
 		    // printf( "This is what you typed: %s\n", parameters[i]); //Comment this out before submitting...
 		    command = strtok ( NULL, "  \n");
 		    //printf("printing command variable: %s\n", command);
@@ -67,10 +67,17 @@ int main()
 		pid = fork();
 		if (pid == 0)//if the child, become the program you always wanted to be!
 		{
-		 
+		  int count = 1;
 		  // printf("I AM THE CHILD! I will now execute %s\n", parameters[0]); //for debugging purposes. Maybe create a debug mode?
 		  execvp(parameters[0], parameters); //execve is not what we're looking for, execp* something is.
-		  printf("There was an error executing your command"); //if this line executes, something went wrong.
+		  printf("There was an error executing your command\n"); //if this line executes, something went wrong.
+		  printf("Does \"%s", parameters[0]);
+		    while (parameters[count]!=NULL)
+		      {
+			printf(" %s", parameters[count]);
+			count++;
+		      }
+		  printf("\" exist?\n");
 		  exit(2); //kill the child
 		}
 		else if (pid > 0)//if the parent, wait for the child to stop being st00pid
@@ -82,7 +89,18 @@ int main()
 		  printf("There was an error creating your requested process.\n");
 		  exit(3);
 		}
+		//this doesn't help the issue of old commands being jumbled, and causes buffer overflows.  Commented out for safety.
+		/*for(int count =0; count < MAX_LEN; count++) //lets NULL out the arrays between iterations
+		  {
+		    cmdString[count]=NULL;
+		  }
+		//int count =0;
+		//while (parameters[count]!=NULL)
+		for (int count=sizeof(parameters); count >= 0; count--)
+		  {
+		    parameters[count]=NULL;
+		    //count++;
+		    }*/
+		
 	}
 }
-		
-	

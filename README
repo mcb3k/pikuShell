@@ -11,6 +11,6 @@ goals:
 * implement redirection and pipes
 
 Current issues:
-* Can't process a string longer than 8 characters.
+* Has issues with some commands being jumbled with the previous command.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
