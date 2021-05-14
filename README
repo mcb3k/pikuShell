@@ -3,7 +3,9 @@
 /* pikuShell was created as an exercise in c programming, as well as to gain knowledge of systems programming.
 Do not use pikuShell for anything more than this.
 
-If you are a student and find this useful, please take inspiration from it.  If you are doing this for a project, look but don't copy.
+If you are a student and find this useful, please take inspiration from it.  
+If you are doing this for a project, look but don't copy.
+
 You should always include a list where you found examples, inspiration, and code.
 
 goals:
@@ -13,4 +15,4 @@ goals:
 Current issues:
 * Has issues with some commands being jumbled with the previous command.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
